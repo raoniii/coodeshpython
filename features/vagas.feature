@@ -3,7 +3,7 @@ Feature: Consulta vagas
 
   Scenario: Consultar vagas nas empresas
       Given que acesso o site da coodesh
-      And aceito os cookies
+      And  cookies aceitos
       When digito email e senha
       And clico em entrar
       And clico na opção vagas

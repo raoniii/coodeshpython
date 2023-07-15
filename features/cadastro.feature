@@ -1,6 +1,7 @@
 Feature: Cadastro e verificacao
     Cadastra uma nova conta e valida campos do formulario.
 
+    @cadastro
     Scenario: Criar nova conta developer
         Given que acesso url
         When os cookies são aceitos
