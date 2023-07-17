@@ -5,4 +5,4 @@ Feature: Carregamento da Home Page
     Scenario: Carregar a Home Page com sucesso
         Given que acesso a url
         When aceito os cookies
-        Then vejo o conteúdo da home page
+        Then vejo o conteudo da home page
