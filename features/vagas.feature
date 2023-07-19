@@ -12,4 +12,3 @@ Feature: Consulta vagas
       And busco vaga por empresa
       |empresa|
       |big|
-      Then Verifico resultado

@@ -1,6 +1,6 @@
 Feature: Cadastro e verificacao
     Cadastra uma nova conta e valida campos do formulario.
-
+    
     @cadastro
     Scenario: Criar nova conta developer
         Given que acesso url
@@ -20,7 +20,7 @@ Feature: Cadastro e verificacao
         And clico no botao criar conta
         And preencho os dados da nova conta
         |full_name|email|password|
-        |Stephanie Welch|9stephanie300666@example.com|Stephanie123$|
+        |Stephanie Welch|troy.davidson04@example.com|Stephanie123$|
         And clico para aceitar os termos
         And clico no botão inscrever-se
         And verifico se login foi realizado

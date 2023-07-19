@@ -35,8 +35,3 @@ def step_impl(context):
         empresa = row["empresa"]
         context.vagaspage.enter_search_company(empresa)
 
-
-
-@then(u'Verifico resultado')
-def step_impl(context):
-    ...

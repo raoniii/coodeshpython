@@ -58,13 +58,5 @@ class VagasPage:
         time.sleep(5)
 
 
-    def check_vagas(self, expected_message_text):
-        element = self.driver.find_element(By.XPATH, self.onboarding_message_xpath)
-        actual_text = element.text.strip()
-        time.sleep(5)
-        return actual_text == expected_message_text
-
-
-
     
     

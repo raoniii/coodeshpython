@@ -68,7 +68,7 @@ def step_impl(context):
 
 @when(u'indico momento profissional')
 def step_impl(context):
-    ...
+    context.cadastropage.select_job_preference()
 
 
 @when(u'preencho campos whatssapp, cidade de residencia')

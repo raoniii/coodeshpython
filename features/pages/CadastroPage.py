@@ -1,6 +1,7 @@
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
 class CadastroPage:
@@ -18,7 +19,10 @@ class CadastroPage:
 
     career_frontend_xpath = '//*[@id="__next"]/div[3]/div/div/div/div/div[1]/form/div[3]/div[2]/div/div/span'
     habilidade_field_xpath = '//*[@id="__next"]/div[3]/div/div/div/div/div[1]/form/div[4]/div[1]/div[2]/div/span[6]'
-    area_tech_xpath = 'years_experience'
+    area_tech_xpath = '//*[@id="__next"]/div[3]/div/div/div/div/div[1]/form/div[4]/div[2]/div/div[3]/span[5]'
+    rc_slider_handle = '//*[@class="rc-slider-handle"]'
+    job_preference_xpath = '//select[@id="preferences.job_search"]'
+    option_job_preference_xpaht = '//select[@id="preferences.job_search"]/option[1]'
 
     def click_on_ok_button(self):
         wait = WebDriverWait(self.driver, 10)
@@ -66,6 +70,7 @@ class CadastroPage:
         time.sleep(5)
 
     def check_display_onboarding_text(self, expected_message_text):
+        time.sleep(5)
         element = self.driver.find_element(By.XPATH, self.onboarding_message_xpath)
         actual_text = element.text.strip()
         time.sleep(5)
@@ -91,11 +96,25 @@ class CadastroPage:
 
 
     def click_on_exptech(self):
-        wait = WebDriverWait(self.driver, 10)
-        element_id = wait.until(EC.element_to_be_clickable((By.ID, self.area_tech_xpath)))
-        element_id.click()
-        time.sleep(1)
+        wait = WebDriverWait(self.driver, 5)
+        self.driver.implicitly_wait(5)
+        slider_handle = self.driver.find_element(By.XPATH, self.rc_slider_handle)
 
 
+        # Calcula o deslocamento necessário para alcançar 50%
+        deslocamento = 50
+
+        # Cria uma instância da classe ActionChains para manipular ações do mouse
+        action_chains = ActionChains(self.driver)
+
+        # Move o controle deslizante para 50%
+        action_chains.drag_and_drop_by_offset(slider_handle, deslocamento, 0).perform()
+        time.sleep(5)
     
-    
+    def select_job_preference(self):
+        wait = WebDriverWait(self.driver, 5)
+        self.driver.implicitly_wait(5)
+        self.click_on_element("search_field_xpath", self.job_preference_xpath)
+        self.click_on_element("search_field_xpath", self.option_job_preference_xpaht)
+        
+        time.sleep(5)
