@@ -68,78 +68,105 @@ def step_impl(context):
 
 @when(u'indico momento profissional')
 def step_impl(context):
-    context.cadastropage.select_job_preference()
+    ...
+    #context.cadastropage.click_on_exptech
 
 
 @when(u'preencho campos whatssapp, cidade de residencia')
 def step_impl(context):
-    ...
+    for row in context.table:
+        whatsapp = row["whatsapp"]
+        city = row["city"]
+        context.cadastropage.enter_whatsapp(whatsapp)
+        context.cadastropage.enter_city(city)
 
 
 @when(u'seleciono preferencia de vaga')
 def step_impl(context):
-    ...
-
+    context.cadastropage.click_on_integral_checkbox()
+    
 
 @when(u'clico em proximo')
 def step_impl(context):
-    ...
+    context.cadastropage.click_proximo_button()
 
 
-@when(u'preencho campos camunidades, causas sociais,')
+@when(u'preencho campo camunidades')
 def step_impl(context):
-    ...
+    context.cadastropage.click_on_comunidades()
 
-
-@when(u'preencho raça/cor, ident genero, orient sexual, deficiencia')
+@when(u'preencho campo relacao com comunidade')
 def step_impl(context):
-    ...
+    context.cadastropage.click_on_relacao_comunidades()
+
+
+@when(u'preencho causas sociais')
+def step_impl(context):
+    for row in context.table:
+        causas = row["causas"]
+        context.cadastropage.click_on_causas_sociais(causas)
+
+
+@when(u'preencho raça/cor')
+def step_impl(context):
+    context.cadastropage.click_on_raca_cor()
+
+@when(u'preencho ident genero')
+def step_impl(context):
+    context.cadastropage.click_on_genero()
+
+
+@when(u'preencho orient sexual')
+def step_impl(context):
+    context.cadastropage.click_on_orientacao_sexual()
+
+@when(u'preencho deficiencia')
+def step_impl(context):
+    context.cadastropage.click_on_deficiencia()
+
+@when(u'clico para avancar')
+def step_impl(context):
+    context.cadastropage.click_proximo_button2()
 
 
 @when(u'verifico se pagina do scorecard foi exibida')
 def step_impl(context):
-    ...
+    assert context.cadastropage.check_display_scorecard_text("Scorecard")
 
 
 @when(u'clico no botao proximo')
 def step_impl(context):
-    ...
+    context.cadastropage.click_proximo_responder()
 
 
 @when(u'indico conhecimentos')
 def step_impl(context):
-    ...
+    context.cadastropage.preencher_scorecard1()
 
 @when(u'clico proximo')
 def step_impl(context):
-    ...
+    context.cadastropage.click_proximo_button3()
 
 
 @when(u'indico conhecimentos parte 2')
 def step_impl(context):
-    ...
+    context.cadastropage.preencher_scorecard2()
+
+@when(u'clico proximo pt2')
+def step_impl(context):
+    context.cadastropage.click_proximo_button4()
 
 
 @when(u'indico conhecimentos parte 3')
 def step_impl(context):
-    ...
-
-
-@when(u'clico para avançar')
-def step_impl(context):
-    ...
-
-
-@when(u'indico conhecimentos parte 4')
-def step_impl(context):
-    ...
+    context.cadastropage.preencher_scorecard3()
 
 
 @when(u'clico em enviar')
 def step_impl(context):
-    ...
+    context.cadastropage.click_enviar()
 
 
 @when(u'clico em concluir')
 def step_impl(context):
-    ...
+   context.cadastropage.click_concluir()

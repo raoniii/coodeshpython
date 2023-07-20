@@ -16,6 +16,7 @@ class HomePage:
         wait = WebDriverWait(self.driver, 10)
         ok_button = wait.until(EC.visibility_of_element_located(self.locators["ok_button"]))
         ok_button.click()
+        time.sleep(1)
 
     def check_display_login_text(self, expected_message_text):
         element = self.driver.find_element(*self.locators["message"])

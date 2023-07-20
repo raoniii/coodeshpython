@@ -25,17 +25,17 @@ class VagasPage:
         wait = WebDriverWait(self.driver, 10)
         ok_button = wait.until(EC.visibility_of_element_located(self.locators["ok_button"]))
         ok_button.click()
-        time.sleep(5)
+        time.sleep(2)
 
     def enter_email_login(self, email_text):
         email_field = self.driver.find_element(*self.locators["email_field"])
         email_field.send_keys(email_text)
-        time.sleep(2)
+        time.sleep(1)
 
     def enter_password_login(self, password_text):
         password_field = self.driver.find_element(*self.locators["password_field"])
         password_field.send_keys(password_text)
-        time.sleep(2)
+        time.sleep(1)
     
     def click_on_entrar_button(self):
         self.click_on_element("entrar_button")

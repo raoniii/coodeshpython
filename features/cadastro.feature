@@ -8,7 +8,7 @@ Feature: Cadastro e verificacao
         And clico no botao criar conta
         And preencho os dados da nova conta
         |full_name|email|password |
-        |Inoar  F1|ema33@email.com|InoarF123$|
+        |Inoar  F1|troy999@email.com|InoarF123$|
         And clico para aceitar os termos
         And clico no botão inscrever-se
         Then verifico se login foi realizado
@@ -20,7 +20,7 @@ Feature: Cadastro e verificacao
         And clico no botao criar conta
         And preencho os dados da nova conta
         |full_name|email|password|
-        |Stephanie Welch|troy.davidson04@example.com|Stephanie123$|
+        |Stephanie Welch|troy999@example.com|Stephanie123$|
         And clico para aceitar os termos
         And clico no botão inscrever-se
         And verifico se login foi realizado
@@ -29,21 +29,27 @@ Feature: Cadastro e verificacao
         And indico experiencia com tech
         And indico momento profissional
         And preencho campos whatssapp, cidade de residencia
-        |whatsapp|cidade|
+        |whatsapp|city|
         |11999999999|poa|
         And seleciono preferencia de vaga
         And clico em proximo
-        And preencho campos camunidades, causas sociais,
-        And preencho raça/cor, ident genero, orient sexual, deficiencia
+        And preencho campo camunidades
+        And preencho campo relacao com comunidade
+        And preencho causas sociais
+        |causas|
+        |Saúde|
+        And preencho raça/cor
+        And preencho ident genero
+        And preencho orient sexual
+        And preencho deficiencia
+        And clico para avancar
         And verifico se pagina do scorecard foi exibida
         And clico no botao proximo
         And indico conhecimentos
         And clico proximo
         And indico conhecimentos parte 2
-        And clico proximo
+        And clico proximo pt2
         And indico conhecimentos parte 3
-        and clico para avançar
-        And indico conhecimentos parte 4
         And clico em enviar
         And clico em concluir
 
